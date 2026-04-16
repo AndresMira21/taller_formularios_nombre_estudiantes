@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Solicitud</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        form { background: #f9f9f9; padding: 20px; border-radius: 5px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        button { background: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 3px; margin-top: 15px; cursor: pointer; }
+        .errorlist { color: red; list-style: none; padding: 0; }
+    </style>
+</head>
+<body>
+    <h1>Registro de Solicitud</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+    <p><a href="{% url 'asistencia_new' %}">Ir a Registro de Asistencia</a></p>
+</body>
+</html>
